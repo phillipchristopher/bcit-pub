@@ -1,10 +1,9 @@
 public class Electronic extends HouseholdObject
 {
     private final int       voltageV;
+    private final String     itemConnectivity;
     private final String    powerSource;
-    private final String    brandName;
-    private final String    modelName;
-
+    
     private static final int MIN_VOLTAGE = 0;
     private static final int MAX_VOLTAGE = 120;
     private static final String CONNECTIVITY_BLUETOOTH = "bluetooth";
@@ -14,19 +13,23 @@ public class Electronic extends HouseholdObject
     private static final String POWER_SOURCE_BATTERY = "battery";
     
     public Electronic(final int yearPurchased,
-                      final String createdBy,
+                      final String householdObjectName,
+                      final String householdObjectBrand,
                       final String mainColour,
                       final boolean isElectric,
                       final int weightKgs,
+                      final double priceCad,
                       final int voltageV,
                       final String itemConnectivity,
                       final String powerSource)
     {
         super(yearPurchased,
-              createdBy,
+              householdObjectName,
+              householdObjectBrand,
               mainColour,
               isElectric,
-              weightKgs);
+              weightKgs,
+             price_Cad);
 
         if(voltageV < MIN_VOLTAGE || voltageV > MAX_VOLTAGE)
         {

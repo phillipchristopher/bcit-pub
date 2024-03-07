@@ -18,15 +18,18 @@ public class Furniture extends HouseholdObject {
   if (frameMaterial != null &&
     (!frameMaterial.equalsIgnoreCase(FRAME_WOOD) &&
       !frameMaterial.equalsIgnoreCase(FRAME_METAL) &&
-      !frameMaterial.equalsIgnoreCase(FRAME_OTHER))
-  ) {
+      !frameMaterial.equalsIgnoreCase(FRAME_OTHER))) 
+  {
     throw new IllegalArgumentException("Invalid frame material" + frameMaterial);
   }
   this.isAssemblyRequired = isAssemblyRequired;
   this.frameMaterial = frameMaterial;
-}
 
 @Override
 public String getType() {
   return "Furniture";
 }
+
+}
+
+

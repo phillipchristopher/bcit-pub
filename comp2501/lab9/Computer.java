@@ -1,8 +1,14 @@
 public class Computer extends Electronic
 {
-    private final int    ramGigabytes;
-    private final int    hardDriveCapactityGigabytes;
+    private final int    memoryGb;
+    private final int    storageCapactityGb;
     private final String operatingSystem;
+
+    private static final int MIN_MEMORY_GB = 2;
+    private static final int MAX_MEMORY_GB = 256;
+    private static final String WINDOWS_OS = "windows";
+    private static final String LINUX_OS = "linux";
+    private static final String MAC_OS = "mac";
 
     public Computer(final int yearPurchased,
                     final String createdBy,
@@ -13,15 +19,18 @@ public class Computer extends Electronic
                     final String powerSource,
                     final String brandName,
                     final String modelName,
-                    final int ramGigabytes,
-                    final int hardDriveCapacityGigabytes,
+                    final int memoryGb,
+                    final int storageCapactityGb,
                     final String operatingSystem)
     {
         super(yearPurchased, createdBy, mainColor, isElectric, weightKgs, voltage, powerSource, brandName, modelName);
         
-        
-        this.ramGigabytes                = ramGigabytes;
-        this.hardDriveCapactityGigabytes = hardDriveCapacityGigabytes;
+        if(memoeryGb < MIN_MEMORY_GB || memoryGb > MAX_MEMORY_GB)
+        {
+            throw new IllegalArgumentException("Invalid memory: " + memoryGb);
+        }
+        this.memoryGb                    = memoryGb;
+        this.storageCapactityGb          = storageCapactityGb;
         this.operatingSystem             = operatingSystem;
     }
 }

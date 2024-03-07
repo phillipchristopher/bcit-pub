@@ -3,7 +3,6 @@ public class HouseholdObject
     private final int       yearPurchased;
     private final String    householdObjectName;
     private final String    householdObjectBrand;
-    private final String    householdObjectModel;
     private final String    mainColor;
     private final boolean   isElectric;
     private final int       weightKgs;
@@ -21,7 +20,8 @@ public class HouseholdObject
                            final double priceCad)
     {
         this.yearPurchased = yearPurchased;
-        this.createdBy     = createdBy;
+        this.householdObjectName     = householdObjectName;
+        this.householdObjectBrand     = householdObjectBrand;
         this.mainColor     = mainColor;
         this.isElectric    = isElectric;
         this.weightKgs     = weightKgs;

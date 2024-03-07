@@ -33,4 +33,10 @@ public class Computer extends Electronic
         this.storageCapactityGb          = storageCapactityGb;
         this.operatingSystem             = operatingSystem;
     }
+
+    @Override
+    public String getType()
+    {
+        return "Computer";
+    }
 }

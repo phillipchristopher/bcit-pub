@@ -9,7 +9,7 @@ public class Computer extends Electronic
                     final String mainColor,
                     final boolean isElectric,
                     final int weightKgs,
-                    final int voltage,
+                    final int voltageV,
                     final String powerSource,
                     final String brandName,
                     final String modelName,
@@ -18,6 +18,8 @@ public class Computer extends Electronic
                     final String operatingSystem)
     {
         super(yearPurchased, createdBy, mainColor, isElectric, weightKgs, voltage, powerSource, brandName, modelName);
+        
+        
         this.ramGigabytes                = ramGigabytes;
         this.hardDriveCapactityGigabytes = hardDriveCapacityGigabytes;
         this.operatingSystem             = operatingSystem;

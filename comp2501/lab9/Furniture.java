@@ -10,9 +10,10 @@ public class Furniture extends HouseholdObject {
     final String homeObjectBrand,
     final double priceCad,
     final String mainColour,
+    final int weightKgs,
     final boolean isAssemblyRequired,
     final String frameMaterial) {
-    super(homeObjectName, homeObjectBrand, priceCad, mainColour)
+    super(homeObjectName, homeObjectBrand, weightKgs, priceCad, mainColour)
   }
 
   if (frameMaterial != null &&

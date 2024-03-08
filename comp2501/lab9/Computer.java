@@ -1,7 +1,7 @@
 public class Computer extends Electronic
 {
     private final int    memoryGb;
-    private final int    storageCapactityGb;
+    private final int    storageCapacityGb;
     private final String operatingSystem;
 
     private static final int MIN_MEMORY_GB = 2;
@@ -11,32 +11,52 @@ public class Computer extends Electronic
     private static final String MAC_OS = "mac";
 
     public Computer(final int yearPurchased,
-                    final String createdBy,
+                    final String householdObjectName,
+                    final String householdObjectBrand,
                     final String mainColor,
                     final boolean isElectric,
                     final int weightKgs,
+                    final double priceCad,
                     final int voltageV,
+                    final String itemConnectivity,
                     final String powerSource,
-                    final String brandName,
-                    final String modelName,
                     final int memoryGb,
-                    final int storageCapactityGb,
+                    final int storageCapacityGb,
                     final String operatingSystem)
     {
-        super(yearPurchased, createdBy, mainColor, isElectric, weightKgs, voltage, powerSource, brandName, modelName);
-        
-        if(memoeryGb < MIN_MEMORY_GB || memoryGb > MAX_MEMORY_GB)
+        super(yearPurchased, householdObjectName, householdObjectBrand, mainColor, isElectric, weightKgs, priceCad, voltageV, itemConnectivity, powerSource);
+
+        if(memoryGb < MIN_MEMORY_GB || memoryGb > MAX_MEMORY_GB)
         {
             throw new IllegalArgumentException("Invalid memory: " + memoryGb);
         }
         this.memoryGb                    = memoryGb;
-        this.storageCapactityGb          = storageCapactityGb;
+        this.storageCapacityGb          = storageCapacityGb;
         this.operatingSystem             = operatingSystem;
     }
 
-    @Override
-    public String getType()
+    public int getMemoryGb()
     {
-        return "Computer";
+        return memoryGb;
+    }
+
+    public int getStorageCapacityGb()
+    {
+        return storageCapacityGb;
+    }
+
+    public String getOperatingSystem()
+    {
+        return operatingSystem;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Computer{" +
+                "memoryGb=" + memoryGb +
+                ", storageCapacityGb=" + storageCapacityGb +
+                ", operatingSystem='" + operatingSystem + '\'' +
+                '}';
     }
 }

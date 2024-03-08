@@ -1,37 +1,40 @@
 public class Dishwasher extends Electronic
 {
-    private final String cycleTypes;
-    private final int    decibalRating;
+    private final int numberOfCycles;
+    private final int    decibelRating;
 
-    private static final String NORMAL_CYCLE = "normal";
-    private static final String HEAVY_DUTY_CYCLE = "heavy duty";
-    private static final String ECO_CYCLE = "eco";
-
-    private static final int MIN_DECIBAL_RATING = 0;
-    private static final int MAX_DECIBAL_RATING = 120;
+    private static final int MIN_NUM_CYCLES = 1;
+    private static final int MAX_NUM_CYCLES = 50;
+    private static final int MIN_DECIBEL_RATING = 0;
+    private static final int MAX_DECIBEL_RATING = 120;
 
     public Dishwasher(final int yearPurchased,
                       final String householdObjectName,
                       final String householdObjectBrand,
-                      final String mainColour;
+                      final String mainColour,
                       final boolean isElectric,
                       final int weightKgs,
                       final double priceCad, // should this change to purchasePriceCad???? --> revisit
                       final int voltageV,
-                      final String itemConnectivity;
+                      final String itemConnectivity,
                       final String powerSource,
-                      final String cycleTypes,
-                      final int decibalRating)
+                      final int numberOfCycles,
+                      final int decibelRating)
+
     {
-        super(yearPurchased, createdBy, mainColor, isElectric, weightKgs, voltage, powerSource, brandName, modelName);
-        
-        if(decibalRating < MIN_DECIBAL_RATING || decibalRating > MAX_DECIBAL_RATING)
+        super(yearPurchased, householdObjectName, householdObjectBrand, mainColour, isElectric, weightKgs, priceCad, voltageV, itemConnectivity, powerSource);
+
+        if(decibelRating < MIN_DECIBEL_RATING || decibelRating > MAX_DECIBEL_RATING)
         {
-            throw new IllegalArgumentException("Invalid decibal rating: " + decibalRating);
+            throw new IllegalArgumentException("Invalid decibel rating: " + decibelRating);
         }
 
-        
-        this.cycleTypes    = cycleTypes;
-        this.decibalRating = decibalRating;
+        if(numberOfCycles < MIN_NUM_CYCLES || numberOfCycles > MAX_NUM_CYCLES)
+        {
+            throw new IllegalArgumentException("Invalid number of cycles: " + numberOfCycles);
+        }
+
+        this.numberOfCycles    = numberOfCycles;
+        this.decibelRating = decibelRating;
     }
 }
